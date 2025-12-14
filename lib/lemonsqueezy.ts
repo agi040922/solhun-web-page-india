@@ -31,21 +31,30 @@ export function initLemonSqueezy() {
  * Lemon Squeezy 결제 페이지로 이동할 수 있는 URL을 생성합니다.
  * 사용자가 "Get Access" 버튼 클릭 시 호출됩니다.
  *
- * @param options - 체크아웃 옵션 (이메일, 이름 등 pre-fill 가능)
+ * @param options - 체크아웃 옵션
+ * @param options.email - 사용자 이메일 (pre-fill 용도)
+ * @param options.name - 사용자 이름 (pre-fill 용도)
+ * @param options.variantId - Variant ID (선택, 없으면 환경변수 사용)
  * @returns 체크아웃 URL
  */
 export async function getCheckoutURL(options?: {
   email?: string
   name?: string
+  variantId?: string
 }) {
   // SDK 초기화
   initLemonSqueezy()
 
   const storeId = process.env.LEMONSQUEEZY_STORE_ID
-  const variantId = process.env.LEMONSQUEEZY_VARIANT_ID
+  // variantId: 파라미터 우선, 없으면 환경변수 사용
+  const variantId = options?.variantId || process.env.LEMONSQUEEZY_VARIANT_ID
 
-  if (!storeId || !variantId) {
-    throw new Error("LEMONSQUEEZY_STORE_ID 또는 LEMONSQUEEZY_VARIANT_ID가 설정되지 않았습니다.")
+  if (!storeId) {
+    throw new Error("LEMONSQUEEZY_STORE_ID 환경변수가 설정되지 않았습니다.")
+  }
+
+  if (!variantId) {
+    throw new Error("variantId가 제공되지 않았고, LEMONSQUEEZY_VARIANT_ID 환경변수도 설정되지 않았습니다.")
   }
 
   // 체크아웃 생성 옵션

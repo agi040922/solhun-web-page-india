@@ -8,6 +8,7 @@ import { getCheckoutURL } from "@/lib/lemonsqueezy"
  * 프론트엔드에서 "Get Access" 버튼 클릭 시 호출됩니다.
  *
  * 요청 바디:
+ * - variantId (선택): Variant ID (없으면 환경변수 LEMONSQUEEZY_VARIANT_ID 사용)
  * - email (선택): 사용자 이메일 (pre-fill 용도)
  * - name (선택): 사용자 이름 (pre-fill 용도)
  *
@@ -18,10 +19,14 @@ export async function POST(req: NextRequest) {
   try {
     // 요청 바디 파싱
     const body = await req.json().catch(() => ({}))
-    const { email, name } = body as { email?: string; name?: string }
+    const { email, name, variantId } = body as {
+      email?: string
+      name?: string
+      variantId?: string
+    }
 
-    // 체크아웃 URL 생성
-    const checkoutUrl = await getCheckoutURL({ email, name })
+    // 체크아웃 URL 생성 (variantId가 있으면 해당 플랜으로, 없으면 환경변수 사용)
+    const checkoutUrl = await getCheckoutURL({ email, name, variantId })
 
     if (!checkoutUrl) {
       return NextResponse.json(
