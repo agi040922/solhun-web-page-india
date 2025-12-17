@@ -5,8 +5,8 @@ import Link from "next/link"
 
 // R2 다운로드 URL
 const DOWNLOAD_URLS = {
-  arm64: "https://pub-dc249db286af4c1991fedf690157891d.r2.dev/cli-manager-1.0.22-arm64.dmg",
-  x64: "https://pub-dc249db286af4c1991fedf690157891d.r2.dev/cli-manager-1.0.22-x64.dmg",
+  arm64: "https://pub-dc249db286af4c1991fedf690157891d.r2.dev/cli-manager-1.0.27-arm64.dmg",
+  x64: "https://pub-dc249db286af4c1991fedf690157891d.r2.dev/cli-manager-1.0.27-x64.dmg",
 }
 
 export function SiteHeader() {
