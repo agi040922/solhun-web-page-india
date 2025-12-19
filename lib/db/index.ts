@@ -1,14 +1,28 @@
-import { neon } from "@neondatabase/serverless";
-import { drizzle } from "drizzle-orm/neon-http";
+import { neon, NeonQueryFunction } from "@neondatabase/serverless";
+import { drizzle, NeonHttpDatabase } from "drizzle-orm/neon-http";
 import * as schema from "./schema";
 
-// Neon serverless HTTP 연결
-// DATABASE_URL 환경변수 사용 (connection pooler 포함)
-const sql = neon(process.env.DATABASE_URL!);
+// 빌드 시점에 환경변수가 없을 수 있으므로 lazy 초기화
+let _db: NeonHttpDatabase<typeof schema> | null = null;
 
-// Drizzle ORM 인스턴스 생성
-// schema를 전달하면 타입 안전한 쿼리가 가능
-export const db = drizzle(sql, { schema });
+function getDb(): NeonHttpDatabase<typeof schema> {
+  if (!_db) {
+    const databaseUrl = process.env.DATABASE_URL;
+    if (!databaseUrl) {
+      throw new Error("DATABASE_URL environment variable is not set");
+    }
+    const sql: NeonQueryFunction<false, false> = neon(databaseUrl);
+    _db = drizzle(sql, { schema });
+  }
+  return _db;
+}
+
+// Proxy로 lazy 초기화 - 실제 사용 시점에만 DB 연결
+export const db = new Proxy({} as NeonHttpDatabase<typeof schema>, {
+  get(_, prop) {
+    return getDb()[prop as keyof NeonHttpDatabase<typeof schema>];
+  },
+});
 
 // 스키마도 함께 내보내기
 export * from "./schema";
