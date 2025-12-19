@@ -26,20 +26,9 @@ function ChangelogSection({
         onClick={() => !isEmpty && setIsOpen(!isOpen)}
         className={`w-full flex items-center justify-between py-2 text-left group ${isEmpty ? "cursor-default opacity-60" : "cursor-pointer"}`}
       >
-        <div className="flex items-center gap-2">
-          <div
-            className={`p-1 rounded-md ${
-              title.startsWith("Improvements")
-                ? "bg-blue-50 text-blue-600"
-                : title.startsWith("Fixes")
-                  ? "bg-orange-50 text-orange-600"
-                  : "bg-gray-100 text-gray-600"
-            }`}
-          ></div>
-          <span className="text-sm font-medium text-[#37322F] font-sans">
-            {title} ({items.length})
-          </span>
-        </div>
+        <span className="text-sm font-medium text-[#37322F] font-sans">
+          {title} ({items.length})
+        </span>
         {!isEmpty && (
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}

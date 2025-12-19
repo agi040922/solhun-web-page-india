@@ -1,7 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Plus, Edit2, Trash2, LogOut, X, Save } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Plus, Edit2, Trash2, LogOut, X, Save, CalendarIcon } from "lucide-react";
+import { Calendar } from "@/components/ui/calendar";
+import { VersionPicker } from "@/components/ui/version-picker";
+import { format, parse } from "date-fns";
 
 // Types
 interface ChangelogItem {
@@ -33,6 +36,23 @@ const EMPTY_FORM: FormData = {
   patches: [],
 };
 
+// 날짜 문자열을 Date 객체로 변환하는 헬퍼 함수
+// "Dec 17, 2025" 형식의 문자열을 파싱
+function parseDisplayDate(dateStr: string): Date | undefined {
+  if (!dateStr) return undefined;
+  try {
+    return parse(dateStr, "MMM d, yyyy", new Date());
+  } catch {
+    return undefined;
+  }
+}
+
+// Date 객체를 표시용 문자열로 변환
+// Date -> "Dec 17, 2025" 형식
+function formatDisplayDate(date: Date): string {
+  return format(date, "MMM d, yyyy");
+}
+
 export default function AdminChangelogPage() {
   // Auth state
   const [apiKey, setApiKey] = useState("");
@@ -48,10 +68,25 @@ export default function AdminChangelogPage() {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [formData, setFormData] = useState<FormData>(EMPTY_FORM);
 
+  // Calendar popover state
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const calendarRef = useRef<HTMLDivElement>(null);
+
   // Item input state (improvements, fixes, patches)
   const [newImprovement, setNewImprovement] = useState("");
   const [newFix, setNewFix] = useState("");
   const [newPatch, setNewPatch] = useState("");
+
+  // 캘린더 외부 클릭 감지해서 닫기
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (calendarRef.current && !calendarRef.current.contains(event.target as Node)) {
+        setIsCalendarOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Check saved API key
   useEffect(() => {
@@ -87,17 +122,15 @@ export default function AdminChangelogPage() {
     setLoading(true);
 
     try {
-      // Simple auth test (POST request check)
       const res = await fetch("/api/changelogs", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({}), // Empty body for test
+        body: JSON.stringify({}),
       });
 
-      // If not 401, auth passed (400 Bad Request means auth passed)
       if (res.status !== 401) {
         localStorage.setItem("admin_api_key", apiKey);
         setIsAuthenticated(true);
@@ -153,6 +186,7 @@ export default function AdminChangelogPage() {
     setNewImprovement("");
     setNewFix("");
     setNewPatch("");
+    setIsCalendarOpen(false);
     setIsModalOpen(true);
   };
 
@@ -161,6 +195,15 @@ export default function AdminChangelogPage() {
     setIsModalOpen(false);
     setEditingId(null);
     setFormData(EMPTY_FORM);
+    setIsCalendarOpen(false);
+  };
+
+  // 캘린더에서 날짜 선택 시 호출
+  const handleDateSelect = (date: Date | undefined) => {
+    if (date) {
+      setFormData((prev) => ({ ...prev, date: formatDisplayDate(date) }));
+    }
+    setIsCalendarOpen(false);
   };
 
   // Save (create/update)
@@ -386,7 +429,7 @@ export default function AdminChangelogPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
-            <div className="sticky top-0 bg-white px-6 py-4 border-b flex items-center justify-between">
+            <div className="sticky top-0 bg-white px-6 py-4 border-b flex items-center justify-between z-10">
               <h2 className="text-lg font-bold text-gray-900">
                 {editingId ? "Edit Changelog" : "New Changelog"}
               </h2>
@@ -402,36 +445,46 @@ export default function AdminChangelogPage() {
             <div className="p-6 space-y-4">
               {/* Basic Info */}
               <div className="grid grid-cols-2 gap-4">
+                {/* Version Picker */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Version *
                   </label>
-                  <input
-                    type="text"
-                    value={formData.version}
-                    onChange={(e) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        version: e.target.value,
-                      }))
+                  <VersionPicker
+                    value={formData.version || "0.0.0"}
+                    onChange={(version) =>
+                      setFormData((prev) => ({ ...prev, version }))
                     }
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="1.0.0"
                   />
                 </div>
-                <div>
+
+                {/* Date Picker with Calendar */}
+                <div className="relative" ref={calendarRef}>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Date *
                   </label>
-                  <input
-                    type="text"
-                    value={formData.date}
-                    onChange={(e) =>
-                      setFormData((prev) => ({ ...prev, date: e.target.value }))
-                    }
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Dec 17, 2025"
-                  />
+                  <button
+                    type="button"
+                    onClick={() => setIsCalendarOpen(!isCalendarOpen)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-left flex items-center justify-between bg-white"
+                  >
+                    <span className={formData.date ? "text-gray-900" : "text-gray-400"}>
+                      {formData.date || "Select date"}
+                    </span>
+                    <CalendarIcon size={16} className="text-gray-400" />
+                  </button>
+
+                  {/* Calendar Dropdown */}
+                  {isCalendarOpen && (
+                    <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                      <Calendar
+                        mode="single"
+                        selected={parseDisplayDate(formData.date)}
+                        onSelect={handleDateSelect}
+                        initialFocus
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
 

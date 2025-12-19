@@ -1,10 +1,12 @@
 import { db, changelogs, type Changelog } from "@/lib/db";
 import { desc } from "drizzle-orm";
+import { unstable_noStore as noStore } from "next/cache";
 import { PageWrapper } from "../../components/page-wrapper";
 import { ChangelogClient } from "./changelog-client";
 
 // 서버에서 데이터 가져오기
 async function getChangelogs(): Promise<Changelog[]> {
+  noStore(); // 캐싱 완전 비활성화
   try {
     const result = await db
       .select()
