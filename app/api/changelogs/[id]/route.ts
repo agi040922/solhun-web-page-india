@@ -51,7 +51,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
 
   try {
     const body = await request.json();
-    const { version, date, title, description, improvements, fixes, patches } =
+    const { version, date, title, description, improvements, fixes, patches, isFeatured, youtubeUrl } =
       body;
 
     const result = await db
@@ -64,6 +64,8 @@ export async function PUT(request: NextRequest, { params }: Params) {
         improvements: improvements || [],
         fixes: fixes || [],
         patches: patches || [],
+        isFeatured: isFeatured || false,
+        youtubeUrl: youtubeUrl || null,
         updatedAt: new Date(),
       })
       .where(eq(changelogs.id, parseInt(id)))

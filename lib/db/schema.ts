@@ -1,4 +1,4 @@
-import { pgTable, serial, text, timestamp, jsonb } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, timestamp, jsonb, boolean } from "drizzle-orm/pg-core";
 
 // Changelog 아이템 타입 (improvements, fixes, patches에 들어가는 항목)
 export type ChangelogItem = {
@@ -16,6 +16,9 @@ export const changelogs = pgTable("changelogs", {
   improvements: jsonb("improvements").$type<ChangelogItem[]>().default([]),
   fixes: jsonb("fixes").$type<ChangelogItem[]>().default([]),
   patches: jsonb("patches").$type<ChangelogItem[]>().default([]),
+  // 주요 changelog 여부 및 유튜브 URL (선택)
+  isFeatured: boolean("is_featured").default(false).notNull(),
+  youtubeUrl: text("youtube_url"),
   // 생성/수정 시간
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),

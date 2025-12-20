@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const { version, date, title, description, improvements, fixes, patches } =
+    const { version, date, title, description, improvements, fixes, patches, isFeatured, youtubeUrl } =
       body;
 
     // 필수 필드 검증
@@ -59,6 +59,8 @@ export async function POST(request: NextRequest) {
         improvements: improvements || [],
         fixes: fixes || [],
         patches: patches || [],
+        isFeatured: isFeatured || false,
+        youtubeUrl: youtubeUrl || null,
       })
       .returning();
 

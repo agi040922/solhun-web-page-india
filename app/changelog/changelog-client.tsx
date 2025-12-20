@@ -2,10 +2,95 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Play } from "lucide-react";
 import type { Changelog, ChangelogItem } from "@/lib/db";
 
+// --- Helper Functions ---
+
+// Extract video ID from YouTube URL
+function getYoutubeVideoId(url: string): string | null {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
+  ];
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match) return match[1];
+  }
+  return null;
+}
+
 // --- Components ---
+
+// Featured Changelog YouTube Card
+function FeaturedChangelogCard({ changelog }: { changelog: Changelog }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoId = changelog.youtubeUrl ? getYoutubeVideoId(changelog.youtubeUrl) : null;
+  const thumbnailUrl = videoId
+    ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+    : null;
+
+  if (!videoId) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="relative w-full mb-10 rounded-2xl overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+        padding: "2px",
+      }}
+    >
+      <div className="bg-white rounded-[14px] overflow-hidden">
+        <div className="flex flex-col md:flex-row">
+          {/* Left: Content */}
+          <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium">
+                Featured Update
+              </span>
+              <span className="text-sm text-gray-500">{changelog.version}</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold text-[#37322F] mb-2 font-serif">
+              {changelog.title}
+            </h3>
+            <p className="text-[#605A57] text-sm mb-4 line-clamp-2">
+              {changelog.description}
+            </p>
+            <div className="text-sm text-gray-400">{changelog.date}</div>
+          </div>
+
+          {/* Right: Video Thumbnail/Player */}
+          <div className="md:w-[45%] aspect-video relative">
+            {!isPlaying ? (
+              <div className="relative w-full h-full group cursor-pointer" onClick={() => setIsPlaying(true)}>
+                <img
+                  src={thumbnailUrl!}
+                  alt={changelog.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <Play size={32} className="text-[#37322F] ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <iframe
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                title={changelog.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 function ChangelogSection({
   title,
@@ -71,7 +156,7 @@ function ChangelogSection({
 }
 
 function ChangelogRow({ entry }: { entry: Changelog }) {
-  // null 체크 (DB에서 null이 올 수 있음)
+  // Null check (DB can return null)
   const improvements = entry.improvements || [];
   const fixes = entry.fixes || [];
   const patches = entry.patches || [];
@@ -114,8 +199,19 @@ function ChangelogRow({ entry }: { entry: Changelog }) {
 
 // --- Exported Client Component ---
 export function ChangelogClient({ changelogs }: { changelogs: Changelog[] }) {
+  // Find featured changelog with YouTube URL (only the most recent one)
+  const featuredChangelog = changelogs.find(
+    (c) => c.isFeatured && c.youtubeUrl
+  );
+
   return (
     <>
+      {/* Featured Changelog Card (only when YouTube URL exists) */}
+      {featuredChangelog && (
+        <FeaturedChangelogCard changelog={featuredChangelog} />
+      )}
+
+      {/* Regular Changelog List */}
       {changelogs.map((entry) => (
         <ChangelogRow key={entry.id} entry={entry} />
       ))}

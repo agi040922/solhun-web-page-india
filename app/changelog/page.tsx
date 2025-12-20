@@ -4,9 +4,9 @@ import { unstable_noStore as noStore } from "next/cache";
 import { PageWrapper } from "../../components/page-wrapper";
 import { ChangelogClient } from "./changelog-client";
 
-// 서버에서 데이터 가져오기
+// Fetch data from server
 async function getChangelogs(): Promise<Changelog[]> {
-  noStore(); // 캐싱 완전 비활성화
+  noStore(); // Disable caching completely
   try {
     const result = await db
       .select()

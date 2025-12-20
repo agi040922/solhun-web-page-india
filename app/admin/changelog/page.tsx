@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Plus, Edit2, Trash2, LogOut, X, Save, CalendarIcon } from "lucide-react";
+import { Plus, Edit2, Trash2, LogOut, X, Save, CalendarIcon, Youtube } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { VersionPicker } from "@/components/ui/version-picker";
 import { format, parse } from "date-fns";
@@ -20,6 +20,8 @@ interface Changelog {
   improvements: ChangelogItem[];
   fixes: ChangelogItem[];
   patches: ChangelogItem[];
+  isFeatured: boolean;
+  youtubeUrl: string | null;
   createdAt: string;
   updatedAt: string;
 }
@@ -34,6 +36,8 @@ const EMPTY_FORM: FormData = {
   improvements: [],
   fixes: [],
   patches: [],
+  isFeatured: false,
+  youtubeUrl: null,
 };
 
 // 날짜 문자열을 Date 객체로 변환하는 헬퍼 함수
@@ -178,6 +182,8 @@ export default function AdminChangelogPage() {
         improvements: changelog.improvements || [],
         fixes: changelog.fixes || [],
         patches: changelog.patches || [],
+        isFeatured: changelog.isFeatured || false,
+        youtubeUrl: changelog.youtubeUrl || null,
       });
     } else {
       setEditingId(null);
@@ -372,6 +378,9 @@ export default function AdminChangelogPage() {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Items
                   </th>
+                  <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Featured
+                  </th>
                   <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Actions
                   </th>
@@ -401,6 +410,13 @@ export default function AdminChangelogPage() {
                       <span className="text-gray-600">
                         {(log.patches || []).length}
                       </span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm">
+                      {log.isFeatured && (
+                        <span className="inline-flex items-center gap-1 px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium">
+                          Featured
+                        </span>
+                      )}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm">
                       <button
@@ -519,6 +535,60 @@ export default function AdminChangelogPage() {
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                   placeholder="Description of this release"
                 />
+              </div>
+
+              {/* Featured Toggle & YouTube URL */}
+              <div className="bg-yellow-50 rounded-xl p-4 border border-yellow-200">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-medium text-gray-700">Featured Update</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        isFeatured: !prev.isFeatured,
+                        youtubeUrl: !prev.isFeatured ? prev.youtubeUrl : null,
+                      }))
+                    }
+                    className={`relative w-11 h-6 rounded-full transition-colors ${
+                      formData.isFeatured ? "bg-yellow-500" : "bg-gray-300"
+                    }`}
+                  >
+                    <span
+                      className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${
+                        formData.isFeatured ? "translate-x-5" : "translate-x-0"
+                      }`}
+                    />
+                  </button>
+                </div>
+
+                {formData.isFeatured && (
+                  <div className="mt-3">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <div className="flex items-center gap-1">
+                        <Youtube size={14} className="text-red-500" />
+                        YouTube URL (Optional)
+                      </div>
+                    </label>
+                    <input
+                      type="url"
+                      value={formData.youtubeUrl || ""}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          youtubeUrl: e.target.value || null,
+                        }))
+                      }
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                      placeholder="https://www.youtube.com/watch?v=..."
+                    />
+                    <p className="text-xs text-gray-500 mt-1">
+                      When set as a featured update, the video will be displayed at the top of the webpage.
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Improvements */}
