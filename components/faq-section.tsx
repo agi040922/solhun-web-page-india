@@ -9,34 +9,29 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What is Brillance and who is it for?",
+    question: "What is Solhun?",
     answer:
-      "Brillance is a comprehensive billing automation platform designed for businesses that need custom contract management. It's perfect for SaaS companies, service providers, and enterprises looking to streamline their billing processes.",
+      "Solhun is a manager app that lets you manage multiple CLI agents (Claude Code, Gemini CLI, Codex, etc.) and projects all in one place.",
   },
   {
-    question: "How does the custom contract billing work?",
+    question: "Which CLI tools are supported?",
     answer:
-      "Our platform automatically processes your custom contracts, calculates billing amounts based on your specific terms, and generates invoices. You can set up complex pricing structures, usage-based billing, and custom billing cycles.",
+      "You can add any CLI tool like Claude Code, Gemini CLI, Codex, and even apps. Switch freely between them with no vendor lock-in.",
   },
   {
-    question: "Can I integrate Brillance with my existing tools?",
+    question: "Is it free to use?",
     answer:
-      "Yes! Brillance integrates seamlessly with popular CRM systems, accounting software, and payment processors. We support APIs and webhooks for custom integrations with your existing workflow.",
+      "Yes, core features are available for free.",
   },
   {
-    question: "What kind of support do you provide?",
+    question: "Do you support Windows/Linux?",
     answer:
-      "We offer 24/7 customer support, dedicated account managers for enterprise clients, comprehensive documentation, and onboarding assistance to help you get started quickly.",
+      "Currently, only Mac is supported. Windows is coming soon. Linux is not yet on the roadmap.",
   },
   {
-    question: "Is my data secure with Brillance?",
+    question: "Is my data safe?",
     answer:
-      "Absolutely. We use enterprise-grade security measures including end-to-end encryption, SOC 2 compliance, and regular security audits. Your data is stored in secure, redundant data centers.",
-  },
-  {
-    question: "How do I get started with Brillance?",
-    answer:
-      "Getting started is simple! Sign up for our free trial, connect your existing systems, and our onboarding team will help you set up your first custom billing workflow within 24 hours.",
+      "Solhun doesn't send any data externally. Everything is processed locally, and it's Apple notarized for your security.",
   },
 ]
 
@@ -71,9 +66,9 @@ export default function FAQSection() {
             Frequently Asked Questions
           </div>
           <div className="w-full text-[#605A57] text-base font-normal leading-7 font-sans">
-            Explore your data, build your dashboard,
+            Everything you need to know about
             <br className="hidden md:block" />
-            bring your team together.
+            managing your CLI agents with Solhun.
           </div>
         </div>
 

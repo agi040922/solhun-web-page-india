@@ -7,6 +7,9 @@ import { PageWrapper } from "../components/page-wrapper"
 import { ScrollVideo } from "../components/scroll-video"
 import Link from "next/link"
 import Script from "next/script"
+import { ProductHuntSticker } from "../components/product-hunt-sticker"
+import FAQSection from "../components/faq-section"
+import TestimonialsSection from "../components/testimonials-section"
 
 // JSON-LD structured data for SEO
 const jsonLd = {
@@ -73,12 +76,13 @@ export default function LandingPage() {
               Your CLI Agents,
               <br />
               All in One Place
-              
-              {/* Sticker Positioning */}
-              {/* <div className="absolute -right-8 top-0 md:-right-24 md:top-4 lg:-right-32 lg:top-8 hidden sm:block">
-                <EarlyAccessSticker />
-              </div> */}
+
+              {/* Product Hunt Sticker */}
+              <div className="absolute -right-10 -top-8 scale-[0.55] sm:scale-75 sm:-right-8 sm:-top-4 md:-right-16 md:top-4 md:scale-100 lg:-right-28 lg:top-8 z-50">
+                <ProductHuntSticker />
+              </div>
             </div>
+
             <div className="w-full max-w-[506.08px] lg:w-[506.08px] text-center flex justify-center flex-col text-[rgba(55,50,47,0.80)] sm:text-lg md:text-xl leading-[1.4] sm:leading-[1.45] md:leading-[1.5] lg:leading-7 font-sans px-2 sm:px-4 md:px-0 lg:text-lg font-medium text-sm">
               Claude Code, Codex CLI, Gemini CLI — manage them all.
               <br className="hidden sm:block" />
@@ -234,6 +238,12 @@ export default function LandingPage() {
 
           </div>
         </div>
+
+        {/* Testimonials Section */}
+        <TestimonialsSection />
+
+        {/* FAQ Section */}
+        <FAQSection />
 
         {/* CTA Section */}
         <CTASection />

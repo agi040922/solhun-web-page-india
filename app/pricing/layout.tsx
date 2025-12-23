@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     description: "Choose the perfect plan for your CLI agent management needs. Free tier available.",
     images: ["/cli-main.png"],
   },
+  alternates: {
+    canonical: "/pricing",
+  },
 }
 
 export default function PricingLayout({

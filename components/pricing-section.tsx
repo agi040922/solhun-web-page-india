@@ -275,6 +275,17 @@ export default function PricingSection() {
           </div>
         </div>
       </div>
+
+      
+      {/* Free Tier Notice */}
+      <div className="w-full py-6 flex flex-col justify-center items-center gap-2">
+        <div className="text-[rgba(55,50,47,0.60)] text-sm font-normal font-sans">
+          Looking for a free option?
+        </div>
+        <div className="text-[#37322F] text-base font-medium font-sans border-b border-[rgba(55,50,47,0.2)] pb-0.5 cursor-pointer hover:border-[rgba(55,50,47,0.6)] transition-colors">
+          Get started with our Free Tier
+        </div>
+      </div>
     </div>
   )
 }

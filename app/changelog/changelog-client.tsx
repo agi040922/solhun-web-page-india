@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Play } from "lucide-react";
+import { ChevronDown, Play, Star } from "lucide-react";
 import type { Changelog, ChangelogItem } from "@/lib/db";
 
 // --- Helper Functions ---
@@ -21,7 +21,7 @@ function getYoutubeVideoId(url: string): string | null {
 
 // --- Components ---
 
-// Featured Changelog YouTube Card
+// Featured Changelog YouTube card
 function FeaturedChangelogCard({ changelog }: { changelog: Changelog }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoId = changelog.youtubeUrl ? getYoutubeVideoId(changelog.youtubeUrl) : null;
@@ -156,7 +156,7 @@ function ChangelogSection({
 }
 
 function ChangelogRow({ entry }: { entry: Changelog }) {
-  // Null check (DB can return null)
+  // Null check (null values can come from DB)
   const improvements = entry.improvements || [];
   const fixes = entry.fixes || [];
   const patches = entry.patches || [];
@@ -199,19 +199,19 @@ function ChangelogRow({ entry }: { entry: Changelog }) {
 
 // --- Exported Client Component ---
 export function ChangelogClient({ changelogs }: { changelogs: Changelog[] }) {
-  // Find featured changelog with YouTube URL (only the most recent one)
+  // Find featured changelog with YouTube URL (most recent one only)
   const featuredChangelog = changelogs.find(
     (c) => c.isFeatured && c.youtubeUrl
   );
 
   return (
     <>
-      {/* Featured Changelog Card (only when YouTube URL exists) */}
+      {/* Featured Changelog card (only when YouTube URL exists) */}
       {featuredChangelog && (
         <FeaturedChangelogCard changelog={featuredChangelog} />
       )}
 
-      {/* Regular Changelog List */}
+      {/* Changelog list */}
       {changelogs.map((entry) => (
         <ChangelogRow key={entry.id} entry={entry} />
       ))}

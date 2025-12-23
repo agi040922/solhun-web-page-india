@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     description: "Learn how to use CLI Manager. Complete guides, tutorials, and API references.",
     images: ["/cli-main.png"],
   },
+  alternates: {
+    canonical: "/docs",
+  },
 }
 
 export default function DocsLayout({

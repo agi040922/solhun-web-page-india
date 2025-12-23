@@ -1,8 +1,35 @@
+import type { Metadata } from "next";
 import { db, changelogs, type Changelog } from "@/lib/db";
 import { desc } from "drizzle-orm";
 import { unstable_noStore as noStore } from "next/cache";
 import { PageWrapper } from "../../components/page-wrapper";
 import { ChangelogClient } from "./changelog-client";
+
+export const metadata: Metadata = {
+  title: "Changelog",
+  description: "Stay up to date with the latest improvements, new features, bug fixes, and updates for CLI Manager.",
+  openGraph: {
+    title: "CLI Manager Changelog - Latest Updates & Releases",
+    description: "Stay up to date with the latest improvements, new features, bug fixes, and updates for CLI Manager.",
+    images: [
+      {
+        url: "/cli-main.png",
+        width: 1200,
+        height: 630,
+        alt: "CLI Manager Changelog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CLI Manager Changelog - Latest Updates & Releases",
+    description: "Stay up to date with the latest improvements and updates for CLI Manager.",
+    images: ["/cli-main.png"],
+  },
+  alternates: {
+    canonical: "/changelog",
+  },
+};
 
 // Fetch data from server
 async function getChangelogs(): Promise<Changelog[]> {
@@ -32,8 +59,8 @@ export default async function ChangelogPage() {
             Changelog
           </h1>
           <p className="text-lg text-[#605A57] font-sans max-w-2xl">
-            Stay up to date with the latest improvements, fixes, and secure
-            patches for Antigravity.
+            Stay up to date with the latest improvements, fixes, and updates
+            for CLI Manager.
           </p>
         </div>
 

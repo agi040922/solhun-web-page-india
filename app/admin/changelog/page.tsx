@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Plus, Edit2, Trash2, LogOut, X, Save, CalendarIcon, Youtube } from "lucide-react";
+import { Plus, Edit2, Trash2, LogOut, X, Save, CalendarIcon, Star, Youtube } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { VersionPicker } from "@/components/ui/version-picker";
 import { format, parse } from "date-fns";
@@ -40,8 +40,8 @@ const EMPTY_FORM: FormData = {
   youtubeUrl: null,
 };
 
-// 날짜 문자열을 Date 객체로 변환하는 헬퍼 함수
-// "Dec 17, 2025" 형식의 문자열을 파싱
+// Helper function to convert date string to Date object
+// Parse string in "Dec 17, 2025" format
 function parseDisplayDate(dateStr: string): Date | undefined {
   if (!dateStr) return undefined;
   try {
@@ -51,8 +51,8 @@ function parseDisplayDate(dateStr: string): Date | undefined {
   }
 }
 
-// Date 객체를 표시용 문자열로 변환
-// Date -> "Dec 17, 2025" 형식
+// Convert Date object to display string
+// Date -> "Dec 17, 2025" format
 function formatDisplayDate(date: Date): string {
   return format(date, "MMM d, yyyy");
 }
@@ -81,7 +81,7 @@ export default function AdminChangelogPage() {
   const [newFix, setNewFix] = useState("");
   const [newPatch, setNewPatch] = useState("");
 
-  // 캘린더 외부 클릭 감지해서 닫기
+  // Close calendar on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (calendarRef.current && !calendarRef.current.contains(event.target as Node)) {
@@ -204,7 +204,7 @@ export default function AdminChangelogPage() {
     setIsCalendarOpen(false);
   };
 
-  // 캘린더에서 날짜 선택 시 호출
+  // Called when date is selected from calendar
   const handleDateSelect = (date: Date | undefined) => {
     if (date) {
       setFormData((prev) => ({ ...prev, date: formatDisplayDate(date) }));
@@ -414,6 +414,7 @@ export default function AdminChangelogPage() {
                     <td className="px-6 py-4 whitespace-nowrap text-center text-sm">
                       {log.isFeatured && (
                         <span className="inline-flex items-center gap-1 px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium">
+                          <Star size={12} className="fill-current" />
                           Featured
                         </span>
                       )}
@@ -541,7 +542,8 @@ export default function AdminChangelogPage() {
               <div className="bg-yellow-50 rounded-xl p-4 border border-yellow-200">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium text-gray-700">Featured Update</span>
+                    <Star size={18} className="text-yellow-600" />
+                    <span className="text-sm font-medium text-gray-700">Featured Changelog</span>
                   </div>
                   <button
                     type="button"
@@ -585,7 +587,7 @@ export default function AdminChangelogPage() {
                       placeholder="https://www.youtube.com/watch?v=..."
                     />
                     <p className="text-xs text-gray-500 mt-1">
-                      When set as a featured update, the video will be displayed at the top of the webpage.
+                      When set as featured, the video will be displayed at the top of the webpage.
                     </p>
                   </div>
                 )}
