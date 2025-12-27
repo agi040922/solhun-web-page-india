@@ -10,6 +10,7 @@ import Script from "next/script"
 import { ProductHuntSticker } from "../components/product-hunt-sticker"
 import FAQSection, { faqData } from "../components/faq-section"
 import TestimonialsSection from "../components/testimonials-section"
+import PricingSection from "../components/pricing-section"
 
 // JSON-LD structured data for SEO
 const jsonLd = {
@@ -279,6 +280,11 @@ export default function LandingPage() {
 
         {/* CTA Section */}
         <CTASection />
+
+        {/* Pricing Section */}
+        <div id="pricing" className="w-full mt-16 md:mt-24">
+          <PricingSection />
+        </div>
       </div>
     </PageWrapper>
   )

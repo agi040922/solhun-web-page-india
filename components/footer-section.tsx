@@ -59,6 +59,9 @@ export default function FooterSection() {
               <Link href="/gallery" className="text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
                 Gallery
               </Link>
+              <Link href="/roadmap" className="text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
+                Roadmap
+              </Link>
             </div>
           </div>
 
@@ -78,6 +81,15 @@ export default function FooterSection() {
             <div className="flex flex-col justify-center items-center gap-2">
               <Link href="/docs" className="self-stretch text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
                 Documentation
+              </Link>
+              <Link href="/feedback" className="self-stretch text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
+                Feedback
+              </Link>
+              <Link href="/compare/antigravity-cursor" className="self-stretch text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
+                vs Antigravity / Cursor
+              </Link>
+              <Link href="/compare/cli-agents" className="self-stretch text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
+                vs CLI Agents
               </Link>
             </div>
           </div>
