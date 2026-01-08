@@ -1,30 +1,51 @@
-# Brillance SaaS Landing Page
+# CLI Manager India (Solhun India)
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
-
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/jkh040922-gmailcoms-projects/v0-brillance-saa-s-landing-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/XCd9vRKg0Mo)
+CLI Manager 인도 버전 웹사이트 - 힌디어 번역 및 인도 시장용 SEO 최적화
 
 ## Overview
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+이 레포지토리는 [CLI Manager](https://solhun.com) 웹사이트의 인도 버전입니다.
 
-## Deployment
+- **도메인**: https://india.solhun.com
+- **언어**: 힌디어 (हिंदी)
+- **Locale**: hi_IN
 
-Your project is live at:
+## Tech Stack
 
-**[https://vercel.com/jkh040922-gmailcoms-projects/v0-brillance-saa-s-landing-page](https://vercel.com/jkh040922-gmailcoms-projects/v0-brillance-saa-s-landing-page)**
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS
+- **Database**: Neon PostgreSQL + Drizzle ORM
+- **Payment**: Lemon Squeezy
+- **Analytics**: Vercel Analytics
+- **Deployment**: Vercel
 
-## Build your app
+## Features
 
-Continue building your app on:
+- 모든 UI 텍스트 힌디어 번역
+- 인도 시장용 SEO 메타데이터
+- OpenGraph / Twitter Card 힌디어 지원
+- JSON-LD 구조화 데이터
 
-**[https://v0.app/chat/XCd9vRKg0Mo](https://v0.app/chat/XCd9vRKg0Mo)**
+## Environment Variables
 
-## How It Works
+```env
+DATABASE_URL=postgresql://...
+LEMONSQUEEZY_API_KEY=...
+LEMONSQUEEZY_STORE_ID=...
+LEMONSQUEEZY_VARIANT_ID=...
+NEXT_PUBLIC_APP_URL=https://india.solhun.com
+ADMIN_API_KEY=...
+LEMONSQUEEZY_WEBHOOK_SECRET=...
+```
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Development
+
+```bash
+pnpm install
+pnpm dev
+```
+
+## Related
+
+- [CLI Manager (Global)](https://solhun.com)
+- [CLI Manager GitHub](https://github.com/agi040922/solhun-web-page)
