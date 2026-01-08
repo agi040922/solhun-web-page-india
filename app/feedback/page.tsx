@@ -6,8 +6,8 @@ import { PageWrapper } from "../../components/page-wrapper";
 import { FeedbackClient } from "./feedback-client";
 
 export const metadata: Metadata = {
-  title: "Feedback",
-  description: "Share your thoughts and suggestions anonymously.",
+  title: "फीडबैक",
+  description: "अपने विचार और सुझाव गुमनाम रूप से साझा करें।",
 };
 
 // 피드백과 댓글을 함께 가져오는 타입
@@ -52,10 +52,10 @@ export default async function FeedbackPage() {
       <div className="w-full max-w-2xl mx-auto px-4 md:px-0">
         <div className="pt-8 pb-12 border-b border-[rgba(55,50,47,0.12)] mb-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-[#37322F] mb-4">
-            Feedback
+            फीडबैक
           </h1>
           <p className="text-lg text-[#605A57] font-sans">
-            We'd love to hear your thoughts. Share your feedback, ideas, or just say hello.
+            हम आपके विचार सुनना चाहेंगे। अपना फीडबैक, आइडियाज, या बस हैलो कहें।
           </p>
         </div>
 

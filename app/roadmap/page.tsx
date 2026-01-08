@@ -6,8 +6,8 @@ import { asc } from "drizzle-orm";
 import { unstable_noStore as noStore } from "next/cache";
 
 export const metadata: Metadata = {
-  title: "Roadmap | Solhun",
-  description: "See what we are working on and what's coming next.",
+  title: "रोडमैप | Solhun",
+  description: "देखें कि हम किस पर काम कर रहे हैं और आगे क्या आने वाला है।",
 };
 
 // Fetch data from server
@@ -33,10 +33,10 @@ export default async function RoadmapPage() {
       <div className="w-full max-w-3xl mx-auto px-6">
         <div className="mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-[#37322F] mb-4 font-serif">
-            Development Roadmap
+            डेवलपमेंट रोडमैप
           </h1>
           <p className="text-[#605A57] text-base md:text-lg leading-relaxed font-sans">
-            Here's what we're currently working on and what we plan to build next.
+            यहां देखें कि हम वर्तमान में किस पर काम कर रहे हैं और आगे क्या बनाने की योजना है।
           </p>
         </div>
         <RoadmapClient roadmaps={data} />

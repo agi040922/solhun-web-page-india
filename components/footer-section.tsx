@@ -14,7 +14,7 @@ export default function FooterSection() {
             <div className="text-center text-[#49423D] text-xl font-semibold leading-4 font-sans">solhun</div>
           </div>
           <div className="text-[rgba(73,66,61,0.90)] text-sm font-medium leading-[18px] font-sans">
-            Coding made effortless
+            कोडिंग को आसान बनाया
           </div>
 
           {/* Contact Links */}
@@ -44,52 +44,52 @@ export default function FooterSection() {
         {/* Navigation Links */}
         <div className="self-stretch p-4 md:p-8 flex flex-col sm:flex-row flex-wrap justify-start sm:justify-between items-start gap-6 md:gap-8">
           
-          {/* Product Column */}
+          {/* उत्पाद कॉलम */}
           <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
             <div className="self-stretch text-[rgba(73,66,61,0.50)] text-sm font-medium leading-5 font-sans">
-              Product
+              उत्पाद
             </div>
             <div className="flex flex-col justify-end items-start gap-2">
               <Link href="/" className="text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
-                Features
+                विशेषताएं
               </Link>
               <Link href="/pricing" className="text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
-                Pricing
+                मूल्य निर्धारण
               </Link>
               <Link href="/gallery" className="text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
-                Gallery
+                गैलरी
               </Link>
               <Link href="/roadmap" className="text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
-                Roadmap
+                रोडमैप
               </Link>
             </div>
           </div>
 
-          {/* Company Column */}
+          {/* कंपनी कॉलम */}
           <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
-            <div className="text-[rgba(73,66,61,0.50)] text-sm font-medium leading-5 font-sans">Company</div>
+            <div className="text-[rgba(73,66,61,0.50)] text-sm font-medium leading-5 font-sans">कंपनी</div>
             <div className="flex flex-col justify-center items-start gap-2">
               <a href="mailto:solhun.jeong@gmail.com" className="text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
-                Contact
+                संपर्क करें
               </a>
             </div>
           </div>
 
-          {/* Resources Column */}
+          {/* संसाधन कॉलम */}
           <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
-            <div className="text-[rgba(73,66,61,0.50)] text-sm font-medium leading-5 font-sans">Resources</div>
+            <div className="text-[rgba(73,66,61,0.50)] text-sm font-medium leading-5 font-sans">संसाधन</div>
             <div className="flex flex-col justify-center items-center gap-2">
               <Link href="/docs" className="self-stretch text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
-                Documentation
+                दस्तावेज़ीकरण
               </Link>
               <Link href="/feedback" className="self-stretch text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
-                Feedback
+                फीडबैक
               </Link>
               <Link href="/compare/antigravity-cursor" className="self-stretch text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
                 vs Antigravity / Cursor
               </Link>
               <Link href="/compare/cli-agents" className="self-stretch text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors">
-                vs CLI Agents
+                vs CLI एजेंट्स
               </Link>
             </div>
           </div>

@@ -7,12 +7,12 @@ import { PageWrapper } from "../../../components/page-wrapper"
 import { UnifiedEcosystemAnimation } from "../../../components/unified-ecosystem-animation"
 
 const comparisonData = [
-  { feature: "Model Selection", comp: "All Models, No CLI Agent", solhun: "All Models + CLI Agents", compStatus: "warning" },
-  { feature: "CLI Agent Management", comp: "No Direct Management", solhun: "Claude Code, Gemini CLI & More", compStatus: "no" },
-  { feature: "Project Management", comp: "In-App Only", solhun: "All Projects at a Glance", compStatus: "warning" },
-  { feature: "Git Worktree", comp: "Cursor Only", solhun: "Easy Parallel Dev", compStatus: "warning" },
-  { feature: "Task Alerts", comp: "Limited Extensibility", solhun: "Claude Code Notifications", compStatus: "warning" },
-  { feature: "Vendor Lock-in", comp: "Tied to App", solhun: "Free to Switch", compStatus: "warning" },
+  { feature: "मॉडल सिलेक्शन", comp: "सभी मॉडल, कोई CLI एजेंट नहीं", solhun: "सभी मॉडल + CLI एजेंट्स", compStatus: "warning" },
+  { feature: "CLI एजेंट मैनेजमेंट", comp: "कोई डायरेक्ट मैनेजमेंट नहीं", solhun: "Claude Code, Gemini CLI और अधिक", compStatus: "no" },
+  { feature: "प्रोजेक्ट मैनेजमेंट", comp: "केवल इन-ऐप", solhun: "सभी प्रोजेक्ट्स एक नज़र में", compStatus: "warning" },
+  { feature: "Git Worktree", comp: "केवल Cursor", solhun: "आसान पैरेलल डेवलपमेंट", compStatus: "warning" },
+  { feature: "टास्क अलर्ट्स", comp: "सीमित एक्सटेंसिबिलिटी", solhun: "Claude Code नोटिफिकेशन", compStatus: "warning" },
+  { feature: "वेंडर लॉक-इन", comp: "ऐप से बंधा", solhun: "स्विच करने की स्वतंत्रता", compStatus: "warning" },
 ]
 
 export default function AntigravityCursorComparison() {
@@ -26,7 +26,7 @@ export default function AntigravityCursorComparison() {
             animate={{ opacity: 1, y: 0 }}
             className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 tracking-tight"
           >
-            Why Solhun over <span className="text-[#37322F]">Antigravity</span> or <span className="text-[#37322F]">Cursor</span>?
+            <span className="text-[#37322F]">Antigravity</span> या <span className="text-[#37322F]">Cursor</span> की जगह Solhun क्यों?
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -34,8 +34,8 @@ export default function AntigravityCursorComparison() {
             transition={{ delay: 0.1 }}
             className="text-sm sm:text-lg text-[#49423D]/80 max-w-2xl mx-auto"
           >
-            Antigravity and Cursor are great, but they aren&apos;t built for CLI agents.
-            Solhun manages everything in one place.
+            Antigravity और Cursor बेहतरीन हैं, लेकिन वे CLI एजेंट्स के लिए नहीं बने हैं।
+            Solhun सब कुछ एक जगह मैनेज करता है।
           </motion.p>
         </div>
 
@@ -49,7 +49,7 @@ export default function AntigravityCursorComparison() {
           <table className="w-full">
             <thead>
               <tr className="bg-[#FAFAF9] border-b border-[#E6E4E2]">
-                <th className="p-4 text-left text-sm font-semibold text-[#49423D]/60">Feature</th>
+                <th className="p-4 text-left text-sm font-semibold text-[#49423D]/60">फीचर</th>
                 <th className="p-4 text-center text-sm font-semibold">Antigravity / Cursor</th>
                 <th className="p-4 text-center text-sm font-bold text-[#37322F]">
                   <div className="flex items-center justify-center gap-2">
@@ -99,7 +99,7 @@ export default function AntigravityCursorComparison() {
               </div>
               <div className="p-3 space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#49423D]/50">Others</span>
+                  <span className="text-xs text-[#49423D]/50">अन्य</span>
                   <div className="flex items-center gap-1.5 text-xs text-[#49423D]/70">
                     {row.compStatus === "no" && <X className="w-3.5 h-3.5 text-red-500" />}
                     {row.compStatus === "warning" && <AlertTriangle className="w-3.5 h-3.5 text-amber-500" />}
@@ -130,15 +130,15 @@ export default function AntigravityCursorComparison() {
           className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-10"
         >
           <div className="bg-white p-5 sm:p-6 rounded-xl border border-[#E6E4E2]">
-            <h3 className="text-base sm:text-lg font-semibold mb-2 text-[#37322F]">Best of Both Worlds</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-2 text-[#37322F]">दोनों दुनिया का सर्वश्रेष्ठ</h3>
             <p className="text-sm text-[#49423D]/80 leading-relaxed">
-              Add Antigravity and Cursor as apps within Solhun. Get CLI agents + your favorite IDEs together.
+              Solhun के अंदर Antigravity और Cursor को ऐप्स के रूप में जोड़ें। CLI एजेंट्स + अपने पसंदीदा IDEs साथ में पाएं।
             </p>
           </div>
           <div className="bg-white p-5 sm:p-6 rounded-xl border border-[#E6E4E2]">
-            <h3 className="text-base sm:text-lg font-semibold mb-2 text-[#37322F]">Why It Matters</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-2 text-[#37322F]">यह महत्वपूर्ण क्यों है</h3>
             <p className="text-sm text-[#49423D]/80 leading-relaxed">
-              CLI agents are powerful but fragmented. Solhun unifies them without vendor lock-in.
+              CLI एजेंट्स शक्तिशाली लेकिन बिखरे हुए हैं। Solhun बिना वेंडर लॉक-इन के उन्हें एकीकृत करता है।
             </p>
           </div>
         </motion.div>
@@ -149,7 +149,7 @@ export default function AntigravityCursorComparison() {
             href="/"
             className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-[#37322F] hover:bg-black rounded-full transition-all duration-200 shadow-sm hover:shadow-md"
           >
-            Get Started with Solhun
+            Solhun के साथ शुरू करें
           </Link>
         </div>
       </div>

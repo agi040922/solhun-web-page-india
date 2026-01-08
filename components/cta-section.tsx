@@ -34,12 +34,12 @@ export default function CTASection() {
         <div className="w-full max-w-[586px] px-6 py-5 md:py-8 overflow-hidden rounded-lg flex flex-col justify-start items-center gap-6 relative z-20">
           <div className="self-stretch flex flex-col justify-start items-start gap-3">
             <div className="self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[56px] font-sans tracking-tight">
-              Ready to revolutionize with AI Agents?
+              AI एजेंट्स के साथ क्रांति के लिए तैयार हैं?
             </div>
             <div className="self-stretch text-center text-[#605A57] text-base leading-7 font-sans font-medium">
-              Manage Git worktrees effortlessly, track ports across projects,
+              Git worktrees को आसानी से प्रबंधित करें, प्रोजेक्ट्स में पोर्ट्स ट्रैक करें,
               <br />
-              and launch complex workflows with terminal templates.
+              और टर्मिनल टेम्प्लेट्स के साथ जटिल वर्कफ्लो लॉन्च करें।
             </div>
           </div>
           <div className="w-full max-w-[497px] flex flex-col justify-center items-center gap-12">
@@ -50,7 +50,7 @@ export default function CTASection() {
               >
                 <div className="w-44 h-[41px] absolute left-0 top-0 bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
                 <span className="text-white text-[13px] font-medium leading-5 font-sans relative z-10">
-                  Download
+                  डाउनलोड करें
                 </span>
                 <svg
                   width="12"

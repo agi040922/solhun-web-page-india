@@ -76,9 +76,9 @@ export default function PricingSection() {
             <div className="flex-1 px-3 sm:px-5 py-4 sm:py-5 bg-white border border-[#E0DEDB] overflow-hidden flex flex-col justify-start items-start gap-6 sm:gap-10">
               <div className="self-stretch flex flex-col justify-start items-center gap-4 sm:gap-7">
                 <div className="self-stretch flex flex-col justify-start items-start gap-1 sm:gap-2">
-                  <div className="text-[rgba(55,50,47,0.90)] text-sm sm:text-lg font-medium leading-5 sm:leading-7 font-sans">Monthly</div>
+                  <div className="text-[rgba(55,50,47,0.90)] text-sm sm:text-lg font-medium leading-5 sm:leading-7 font-sans">मासिक</div>
                   <div className="w-full text-[rgba(41,37,35,0.70)] text-xs sm:text-sm font-normal leading-4 sm:leading-5 font-sans hidden sm:block">
-                    Flexible month-to-month billing
+                    लचीला महीने-दर-महीने बिलिंग
                   </div>
                 </div>
 
@@ -86,10 +86,10 @@ export default function PricingSection() {
                   <div className="flex flex-col justify-start items-start gap-0.5 sm:gap-1">
                     <div className="relative h-[36px] sm:h-[60px] flex items-baseline gap-1 text-[#37322F] text-2xl sm:text-5xl font-medium leading-[36px] sm:leading-[60px] font-serif">
                       <span>$4.99</span>
-                      <span className="text-[#847971] text-sm sm:text-lg font-normal">/mo</span>
+                      <span className="text-[#847971] text-sm sm:text-lg font-normal">/माह</span>
                     </div>
                     <div className="text-[#847971] text-[10px] sm:text-sm font-medium font-sans">
-                      Cancel anytime
+                      कभी भी रद्द करें
                     </div>
                   </div>
                 </div>
@@ -101,15 +101,15 @@ export default function PricingSection() {
                 >
                   <div className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
                   <div className="flex justify-center flex-col text-[#FBFAF9] text-[11px] sm:text-[13px] font-medium leading-4 sm:leading-5 font-sans">
-                    {loadingPlan === "monthly" ? "Loading..." : "Subscribe"}
+                    {loadingPlan === "monthly" ? "लोड हो रहा है..." : "सब्सक्राइब करें"}
                   </div>
                 </button>
               </div>
 
               <div className="self-stretch flex flex-col justify-start items-start gap-1.5 sm:gap-2">
                 {[
-                  "All features included",
-                  "Monthly updates",
+                  "सभी सुविधाएं शामिल",
+                  "मासिक अपडेट्स",
                 ].map((feature, index) => (
                   <div key={index} className="self-stretch flex justify-start items-center gap-2 sm:gap-[13px]">
                     <div className="w-3 h-3 sm:w-4 sm:h-4 relative flex items-center justify-center">
@@ -127,23 +127,23 @@ export default function PricingSection() {
             <div className="flex-1 px-3 sm:px-5 py-4 sm:py-5 bg-[#37322F] border border-[rgba(50,45,43,0.12)] overflow-hidden flex flex-col justify-start items-start gap-6 sm:gap-10">
               <div className="self-stretch flex flex-col justify-start items-center gap-4 sm:gap-7">
                 <div className="self-stretch flex flex-col justify-start items-start gap-1 sm:gap-2">
-                  <div className="text-[#FBFAF9] text-sm sm:text-lg font-medium leading-5 sm:leading-7 font-sans">Lifetime</div>
+                  <div className="text-[#FBFAF9] text-sm sm:text-lg font-medium leading-5 sm:leading-7 font-sans">लाइफटाइम</div>
                   <div className="w-full text-[#B2AEA9] text-xs sm:text-sm font-normal leading-4 sm:leading-5 font-sans hidden sm:block">
-                    Pay once, own forever
+                    एक बार भुगतान करें, हमेशा के लिए अपना
                   </div>
                 </div>
 
                 <div className="self-stretch flex flex-col justify-start items-start gap-1 sm:gap-2">
                   <div className="flex flex-col justify-start items-start gap-0.5 sm:gap-1">
                     <div className="px-2 py-0.5 rounded-full bg-[#FF8000]/10 text-[#FF8000] text-[10px] sm:text-xs font-medium border border-[#FF8000]/20 mb-1 self-start">
-                      Best Value
+                      सर्वोत्तम मूल्य
                     </div>
                     <div className="relative h-[36px] sm:h-[60px] flex items-center gap-2 sm:gap-3 text-[#F0EFEE] text-2xl sm:text-5xl font-medium leading-[36px] sm:leading-[60px] font-serif">
                       <span className="text-[#D2C6BF]/60 text-lg sm:text-3xl line-through decoration-[#D2C6BF]/60 decoration-1">$49</span>
                       <span>$29</span>
                     </div>
                     <div className="text-[#D2C6BF] text-[10px] sm:text-sm font-medium font-sans">
-                      one-time payment
+                      एक बार का भुगतान
                     </div>
                   </div>
                 </div>
@@ -155,15 +155,15 @@ export default function PricingSection() {
                 >
                   <div className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
                   <div className="flex justify-center flex-col text-[#37322F] text-[11px] sm:text-[13px] font-medium leading-4 sm:leading-5 font-sans">
-                    {loadingPlan === "lifetime" ? "Loading..." : "Get Lifetime Access"}
+                    {loadingPlan === "lifetime" ? "लोड हो रहा है..." : "लाइफटाइम एक्सेस पाएं"}
                   </div>
                 </button>
               </div>
 
               <div className="self-stretch flex flex-col justify-start items-start gap-1.5 sm:gap-2">
                 {[
-                  "Unlimited updates",
-                  "Unlimited license",
+                  "असीमित अपडेट्स",
+                  "असीमित लाइसेंस",
                 ].map((feature, index) => (
                   <div key={index} className="self-stretch flex justify-start items-center gap-2 sm:gap-[13px]">
                     <div className="w-3 h-3 sm:w-4 sm:h-4 relative flex items-center justify-center">
@@ -181,9 +181,9 @@ export default function PricingSection() {
             <div className="flex-1 px-3 sm:px-5 py-4 sm:py-5 bg-white border border-[#E0DEDB] overflow-hidden flex flex-col justify-start items-start gap-6 sm:gap-10">
               <div className="self-stretch flex flex-col justify-start items-center gap-4 sm:gap-7">
                 <div className="self-stretch flex flex-col justify-start items-start gap-1 sm:gap-2">
-                  <div className="text-[rgba(55,50,47,0.90)] text-sm sm:text-lg font-medium leading-5 sm:leading-7 font-sans">Annual</div>
+                  <div className="text-[rgba(55,50,47,0.90)] text-sm sm:text-lg font-medium leading-5 sm:leading-7 font-sans">वार्षिक</div>
                   <div className="w-full text-[rgba(41,37,35,0.70)] text-xs sm:text-sm font-normal leading-4 sm:leading-5 font-sans hidden sm:block">
-                    Save 51% vs monthly
+                    मासिक की तुलना में 51% बचाएं
                   </div>
                 </div>
 
@@ -191,10 +191,10 @@ export default function PricingSection() {
                   <div className="flex flex-col justify-start items-start gap-0.5 sm:gap-1">
                     <div className="relative h-[36px] sm:h-[60px] flex items-baseline gap-1 text-[#37322F] text-2xl sm:text-5xl font-medium leading-[36px] sm:leading-[60px] font-serif">
                       <span>$29</span>
-                      <span className="text-[#847971] text-sm sm:text-lg font-normal">/yr</span>
+                      <span className="text-[#847971] text-sm sm:text-lg font-normal">/वर्ष</span>
                     </div>
                     <div className="text-[#847971] text-[10px] sm:text-sm font-medium font-sans">
-                      ~$2.42/month
+                      ~$2.42/माह
                     </div>
                   </div>
                 </div>
@@ -206,15 +206,15 @@ export default function PricingSection() {
                 >
                   <div className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
                   <div className="flex justify-center flex-col text-[#FBFAF9] text-[11px] sm:text-[13px] font-medium leading-4 sm:leading-5 font-sans">
-                    {loadingPlan === "annual" ? "Loading..." : "Subscribe Yearly"}
+                    {loadingPlan === "annual" ? "लोड हो रहा है..." : "वार्षिक सब्सक्राइब करें"}
                   </div>
                 </button>
               </div>
 
               <div className="self-stretch flex flex-col justify-start items-start gap-1.5 sm:gap-2">
                 {[
-                  "All features included",
-                  "Priority support",
+                  "सभी सुविधाएं शामिल",
+                  "प्राथमिकता सहायता",
                 ].map((feature, index) => (
                   <div key={index} className="self-stretch flex justify-start items-center gap-2 sm:gap-[13px]">
                     <div className="w-3 h-3 sm:w-4 sm:h-4 relative flex items-center justify-center">
@@ -247,10 +247,10 @@ export default function PricingSection() {
       {/* Free Tier Notice */}
       <div className="w-full py-6 flex flex-col justify-center items-center gap-2">
         <div className="text-[rgba(55,50,47,0.60)] text-sm font-normal font-sans">
-          Looking for a free option?
+          मुफ्त विकल्प खोज रहे हैं?
         </div>
         <div className="text-[#37322F] text-base font-medium font-sans border-b border-[rgba(55,50,47,0.2)] pb-0.5 cursor-pointer hover:border-[rgba(55,50,47,0.6)] transition-colors">
-          Get started with our Free Tier
+          हमारे मुफ्त टियर के साथ शुरू करें
         </div>
       </div>
     </div>

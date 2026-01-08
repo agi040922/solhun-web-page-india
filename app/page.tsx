@@ -19,25 +19,25 @@ const DOWNLOAD_URLS = {
   x64: "https://pub-dc249db286af4c1991fedf690157891d.r2.dev/cli-manager-1.2.1-x64.dmg",
 }
 
-// JSON-LD structured data for SEO
+// JSON-LD structured data for SEO (Hindi/India)
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "CLI Manager",
   applicationCategory: "DeveloperApplication",
   operatingSystem: "macOS",
-  description: "The ultimate macOS desktop CLI agent management tool. Organize Claude Code, Codex CLI, and Gemini CLI from a single dashboard.",
+  description: "सर्वोत्तम macOS डेस्कटॉप CLI एजेंट प्रबंधन टूल। Claude Code, Codex CLI, और Gemini CLI को एक ही डैशबोर्ड से प्रबंधित करें।",
   offers: {
     "@type": "Offer",
     price: "0",
-    priceCurrency: "USD",
+    priceCurrency: "INR",
     availability: "https://schema.org/InStock",
   },
   featureList: [
-    "Manage Claude Code, Codex CLI, Gemini CLI in one dashboard",
-    "Rename CLI agents to define their roles",
-    "Switch between VS Code, Cursor, and other editors instantly",
-    "Organize all projects in one workspace",
+    "Claude Code, Codex CLI, Gemini CLI को एक डैशबोर्ड में प्रबंधित करें",
+    "CLI एजेंट्स का नाम बदलकर उनकी भूमिकाएं परिभाषित करें",
+    "VS Code, Cursor, और अन्य एडिटर्स के बीच तुरंत स्विच करें",
+    "सभी प्रोजेक्ट्स को एक वर्कस्पेस में व्यवस्थित करें",
   ],
   aggregateRating: {
     "@type": "AggregateRating",
@@ -101,12 +101,12 @@ export default function LandingPage() {
                   <path d="M11.0573 9.47167C11.0667 8.01948 12.2882 7.14917 12.3551 7.10854C11.6669 6.10323 10.5973 5.9526 10.2223 5.93885C9.30949 5.8451 8.42386 6.47417 7.95761 6.47417C7.49136 6.47417 6.78605 5.95292 6.03355 5.96823C5.06699 5.98323 4.15542 6.52917 3.66605 7.37948C2.66261 9.12135 3.40792 11.7101 4.38261 13.1367C4.85699 13.8295 5.43167 14.5932 6.1823 14.5685C6.90386 14.5445 7.1798 14.1035 8.05199 14.1035C8.9223 14.1035 9.17605 14.5685 9.92761 14.5445C10.7029 14.52 11.2335 13.8545 11.701 13.1617C12.2348 12.381 12.457 11.621 12.4795 11.6095C12.4589 11.5995 11.036 11.056 11.0573 9.47167ZM8.83417 4.16292C9.25605 3.6523 9.54011 2.94167 9.46261 2.2351C8.76667 2.26417 7.92542 2.69885 7.42636 3.28448C6.9748 3.80573 6.66605 4.53854 6.7573 5.2323C7.51949 5.29135 8.35855 4.84667 8.83417 4.16292Z" fill="#37322F"/>
                 </svg>
               }
-              text="macOS Desktop App"
+              text="macOS डेस्कटॉप ऐप"
             />
             <h1 className="w-full max-w-[748.71px] lg:w-[748.71px] text-center flex justify-center flex-col text-[#37322F] text-[24px] xs:text-[28px] sm:text-[36px] md:text-[52px] lg:text-[80px] font-normal leading-[1.1] sm:leading-[1.15] md:leading-[1.2] lg:leading-24 font-serif px-2 sm:px-4 md:px-0 relative">
-              Your CLI Agents,
+              आपके CLI एजेंट्स,
               <br />
-              All in One Place
+              सब एक जगह
 
               {/* Product Hunt Sticker */}
               <div className="absolute -right-10 -top-8 scale-[0.55] sm:scale-75 sm:-right-8 sm:-top-4 md:-right-16 md:top-4 md:scale-100 lg:-right-28 lg:top-8 z-50">
@@ -115,9 +115,9 @@ export default function LandingPage() {
             </h1>
 
             <div className="w-full max-w-[506.08px] lg:w-[506.08px] text-center flex justify-center flex-col text-[rgba(55,50,47,0.80)] sm:text-lg md:text-xl leading-[1.4] sm:leading-[1.45] md:leading-[1.5] lg:leading-7 font-sans px-2 sm:px-4 md:px-0 lg:text-lg font-medium text-sm">
-              Claude Code, Codex CLI, Gemini CLI — manage them all.
+              Claude Code, Codex CLI, Gemini CLI — सभी को प्रबंधित करें।
               <br className="hidden sm:block" />
-              Organize projects, switch editors, and stay in control of your desktop agents.
+              प्रोजेक्ट्स व्यवस्थित करें, एडिटर्स बदलें, और अपने डेस्कटॉप एजेंट्स पर नियंत्रण रखें।
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function LandingPage() {
             >
               <div className="w-20 sm:w-24 md:w-28 lg:w-44 h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
               <span className="text-white text-sm sm:text-base md:text-[15px] font-medium leading-5 font-sans relative z-10">
-                Download
+                डाउनलोड करें
               </span>
               <svg
                 width="12"
@@ -240,15 +240,15 @@ export default function LandingPage() {
                     <rect x="9.5" y="5" width="1" height="1" fill="#37322F" />
                   </svg>
                 }
-                text="Key Features"
+                text="मुख्य विशेषताएं"
               />
               <h2 className="w-full max-w-[472.55px] text-center flex justify-center flex-col text-[#49423D] text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
-                Built for developers who juggle multiple AI agents
+                कई AI एजेंट्स को संभालने वाले डेवलपर्स के लिए बनाया गया
               </h2>
               <div className="self-stretch text-center text-[#605A57] text-sm sm:text-base font-normal leading-6 sm:leading-7 font-sans">
-                Stop switching between terminals and losing context.
+                टर्मिनल्स के बीच स्विच करना और कॉन्टेक्स्ट खोना बंद करें।
                 <br className="hidden sm:block" />
-                CLI Manager keeps everything organized in one powerful workspace.
+                CLI Manager सब कुछ एक शक्तिशाली वर्कस्पेस में व्यवस्थित रखता है।
               </div>
             </div>
           </div>
@@ -261,15 +261,15 @@ export default function LandingPage() {
             <div className="w-full px-4 sm:px-6 md:px-12 py-2 sm:py-4 md:py-6 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
               <div className="w-full md:w-[40%] flex flex-col justify-center items-start gap-2 md:gap-3 z-10">
                 <div className="text-[#37322F] text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.1] font-serif tracking-tight">
-                  All CLI Agents, One Dashboard
+                  सभी CLI एजेंट्स, एक डैशबोर्ड
                 </div>
                 <div className="text-[#605A57] text-lg sm:text-xl font-normal leading-8 font-sans">
-                  Claude Code, Codex CLI, Gemini CLI — view and manage them all from a single interface.
+                  Claude Code, Codex CLI, Gemini CLI — सभी को एक ही इंटरफेस से देखें और प्रबंधित करें।
                   <br className="hidden md:block" />
-                  Activate agents, categorize with nicknames, and organize all your projects effortlessly.
+                  एजेंट्स को सक्रिय करें, उपनामों से वर्गीकृत करें, और अपने सभी प्रोजेक्ट्स को आसानी से व्यवस्थित करें।
                 </div>
                 <Link href="/docs" className="text-[#37322F] hover:text-[#605A57] transition-colors text-sm font-medium mt-2 underline">
-                  Learn more →
+                  और जानें →
                 </Link>
               </div>
               <div className="w-full md:w-[60%] relative">
@@ -287,13 +287,13 @@ export default function LandingPage() {
             <div className="w-full px-4 sm:px-6 md:px-12 py-2 sm:py-4 md:py-6 flex flex-col md:flex-row-reverse justify-between items-start gap-2 md:gap-4">
               <div className="w-full md:w-[40%] flex flex-col justify-center items-start gap-2 md:mt-12">
                  <div className="text-[#37322F] text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight font-serif">
-                  Name Your Agents, Define Their Roles
+                  अपने एजेंट्स के नाम रखें, उनकी भूमिकाएं परिभाषित करें
                 </div>
                 <div className="text-[#605A57] text-base sm:text-lg font-normal leading-7 font-sans">
-                  Rename each CLI agent to reflect its purpose. Assign roles like &quot;Frontend Dev&quot;, &quot;Backend API&quot;, or &quot;Design Review&quot; — making multi-agent workflows intuitive and organized.
+                  प्रत्येक CLI एजेंट का नाम बदलकर उसके उद्देश्य को दर्शाएं। &quot;Frontend Dev&quot;, &quot;Backend API&quot;, या &quot;Design Review&quot; जैसी भूमिकाएं असाइन करें — मल्टी-एजेंट वर्कफ्लो को सहज और व्यवस्थित बनाएं।
                 </div>
                 <Link href="/gallery" className="text-[#37322F] hover:text-[#605A57] transition-colors text-sm font-medium mt-2 underline">
-                  See examples →
+                  उदाहरण देखें →
                 </Link>
               </div>
               <div className="w-full md:w-[60%] relative">
@@ -311,13 +311,13 @@ export default function LandingPage() {
             <div className="w-full px-4 sm:px-6 md:px-12 py-2 sm:py-4 md:py-6 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
               <div className="w-full md:w-[40%] flex flex-col justify-center items-start gap-2 md:-mt-8">
                  <div className="text-[#37322F] text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight font-serif">
-                  Switch Editors Instantly
+                  एडिटर्स तुरंत बदलें
                 </div>
                 <div className="text-[#605A57] text-base sm:text-lg font-normal leading-7 font-sans">
-                  Jump between Cursor, VS Code, or any editor with a single click. Configure your preferred editor and switch projects seamlessly — no more context switching friction.
+                  Cursor, VS Code, या किसी भी एडिटर के बीच एक क्लिक में जाएं। अपना पसंदीदा एडिटर कॉन्फ़िगर करें और प्रोजेक्ट्स को आसानी से स्विच करें — कोई कॉन्टेक्स्ट स्विचिंग की परेशानी नहीं।
                 </div>
                 <Link href="/changelog" className="text-[#37322F] hover:text-[#605A57] transition-colors text-sm font-medium mt-2 underline">
-                  See what's new →
+                  नया क्या है देखें →
                 </Link>
               </div>
               <div className="w-full md:w-[60%] relative">

@@ -9,13 +9,13 @@ import { GitBranch, Github, Network, Terminal, FlaskConical } from "lucide-react
 const products = [
   {
     id: "1",
-    title: "Worktree Manager",
-    description: "Effortlessly manage Git worktrees for parallel AI agent workflows. Create, distribute, and merge branches with a single click.",
+    title: "Worktree मैनेजर",
+    description: "समानांतर AI एजेंट वर्कफ्लो के लिए Git worktrees को आसानी से प्रबंधित करें। एक क्लिक में शाखाएं बनाएं, वितरित करें, और मर्ज करें।",
     image: "/worktree-create.png",
     logo: <GitBranch className="h-5 w-5 text-purple-600" />,
-    badge: "Popular",
+    badge: "लोकप्रिय",
     galleryImages: [
-      "/videos/makeworktree.mp4", // 비디오가 첫 번째
+      "/videos/makeworktree.mp4",
       "/worktree-1.png",
       "/worktree-2.png",
       "/worktree-3.png",
@@ -26,25 +26,25 @@ const products = [
   },
   {
     id: "2",
-    title: "Git & GitHub Integration",
-    description: "Visualize your Git history intuitively. Instantly spot agent mistakes and rollback changes with confidence.",
+    title: "Git और GitHub इंटीग्रेशन",
+    description: "अपने Git इतिहास को सहज रूप से विज़ुअलाइज़ करें। तुरंत एजेंट की गलतियों को पहचानें और आत्मविश्वास से परिवर्तन वापस करें।",
     image: "/git-integration-1.png",
     logo: <Github className="h-5 w-5 text-gray-800" />,
-    badge: "Essential",
+    badge: "आवश्यक",
     galleryImages: [
-      "/videos/commit-push.mp4", // 비디오가 첫 번째
+      "/videos/commit-push.mp4",
       "/git-integration-1.png",
       "/git-restore.png",
     ]
   },
   {
     id: "3",
-    title: "Port Manager",
-    description: "Track and manage ports across multiple projects. Never lose sight of which service runs where when delegating to agents.",
+    title: "पोर्ट मैनेजर",
+    description: "कई प्रोजेक्ट्स में पोर्ट्स को ट्रैक और प्रबंधित करें। एजेंट्स को सौंपते समय कभी भी नज़र न खोएं कि कौन सी सेवा कहां चल रही है।",
     image: "/port-monitor.png",
     logo: <Network className="h-5 w-5 text-blue-500" />,
     galleryImages: [
-      "/videos/port-manager.mp4", // 비디오가 첫 번째
+      "/videos/port-manager.mp4",
       "/videos/port-kill.mp4",
       "/port-1.png",
       "/port-2.png",
@@ -53,12 +53,12 @@ const products = [
   },
   {
     id: "4",
-    title: "Terminal Templates",
-    description: "Save and reuse your favorite commands and agent configurations. Launch complex workflows with customizable templates.",
+    title: "टर्मिनल टेम्प्लेट्स",
+    description: "अपने पसंदीदा कमांड और एजेंट कॉन्फ़िगरेशन सहेजें और पुन: उपयोग करें। कस्टमाइज़ेबल टेम्प्लेट्स के साथ जटिल वर्कफ्लो लॉन्च करें।",
     image: "/terminal-templates.png",
     logo: <Terminal className="h-5 w-5 text-green-600" />,
     galleryImages: [
-      "/videos/templates.mp4", // 비디오가 첫 번째
+      "/videos/templates.mp4",
       "/template-1.png",
       "/template-2.png",
       "/template-3.png",
@@ -67,12 +67,12 @@ const products = [
   },
   {
     id: "5",
-    title: "Playground",
-    description: "Experiment fearlessly with AI agents in a sandboxed environment. Test new ideas without affecting your main projects.",
+    title: "प्लेग्राउंड",
+    description: "सैंडबॉक्स्ड वातावरण में AI एजेंट्स के साथ निडर होकर प्रयोग करें। अपने मुख्य प्रोजेक्ट्स को प्रभावित किए बिना नए विचारों का परीक्षण करें।",
     image: "/playground.png",
     logo: <FlaskConical className="h-5 w-5 text-orange-500" />,
     galleryImages: [
-      "/videos/playground.mp4", // 비디오가 첫 번째
+      "/videos/playground.mp4",
       "/playground.png",
       "/main-claude.png",
       "/main-gemini.png",
@@ -111,15 +111,15 @@ export default function GalleryPage() {
                   <rect x="7" y="7" width="4" height="4" stroke="#37322F" strokeWidth="1" fill="none" />
                 </svg>
               }
-              text="Gallery"
+              text="गैलरी"
             />
             <div className="w-full max-w-[598.06px] lg:w-[598.06px] text-center flex justify-center flex-col text-[#49423D] text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
-              Visualizing the Future of Development
+              डेवलपमेंट के भविष्य को विज़ुअलाइज़ करें
             </div>
             <div className="self-stretch text-center text-[#605A57] text-sm sm:text-base font-normal leading-6 sm:leading-7 font-sans">
-              Explore our innovative tools and interfaces designed
+              हमारे नवीन टूल्स और इंटरफ़ेस का अन्वेषण करें जो आपके
               <br />
-              to enhance your AI-powered workflows.
+              AI-संचालित वर्कफ्लो को बेहतर बनाने के लिए डिज़ाइन किए गए हैं।
             </div>
           </div>
         </div>

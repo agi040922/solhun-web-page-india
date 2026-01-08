@@ -22,23 +22,23 @@ export default function DocumentationSection() {
 
   const cards = [
     {
-      title: "Choose the Right Agent",
-      description: "Claude Code for general tasks, Codex CLI for complex logic,\nGemini CLI for design work with Antigravity.",
+      title: "सही एजेंट चुनें",
+      description: "सामान्य कार्यों के लिए Claude Code, जटिल लॉजिक के लिए Codex CLI,\nAntigravity के साथ डिज़ाइन कार्य के लिए Gemini CLI।",
       image: "/main-gemini.png",
     },
     {
-      title: "Name Agents for Parallel Work",
-      description: "Rename agents by role: 'Frontend-React', 'Backend-API'.\nTrack multiple workflows at a glance.",
+      title: "समानांतर कार्य के लिए एजेंट्स का नाम रखें",
+      description: "भूमिका के अनुसार एजेंट्स का नाम बदलें: 'Frontend-React', 'Backend-API'।\nएक नज़र में कई वर्कफ्लो ट्रैक करें।",
       image: "/cli-rename.png",
     },
     {
-      title: "Git Worktree Parallel Workflows",
-      description: "Run agents on separate branches simultaneously.\nZero conflicts, pure parallel productivity.",
+      title: "Git Worktree समानांतर वर्कफ्लो",
+      description: "एक साथ अलग-अलग शाखाओं पर एजेंट्स चलाएं।\nकोई विरोध नहीं, शुद्ध समानांतर उत्पादकता।",
       image: "/worktree-create.png",
     },
     {
-      title: "Easy Merge & Clean",
-      description: "Merge branches and clean up worktrees with simple UI.\nNo command-line memorization required.",
+      title: "आसान मर्ज और सफाई",
+      description: "सरल UI के साथ शाखाओं को मर्ज करें और worktrees साफ करें।\nकमांड-लाइन याद करने की ज़रूरत नहीं।",
       image: "/git-restore.png",
     },
   ]
@@ -68,15 +68,15 @@ export default function DocumentationSection() {
                 <path d="M7 1V13M1 7H13" stroke="#37322F" strokeWidth="1.5" strokeLinecap="round"/>
               </svg>
             }
-            text="How to Use"
+            text="कैसे उपयोग करें"
           />
           <div className="self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
-            Master Your AI Agent Workflow
+            अपने AI एजेंट वर्कफ्लो में महारत हासिल करें
           </div>
           <div className="self-stretch text-center text-[#605A57] text-base font-normal leading-7 font-sans">
-            Orchestrate Claude Code, Codex CLI, and Gemini CLI together.
+            Claude Code, Codex CLI, और Gemini CLI को एक साथ ऑर्केस्ट्रेट करें।
             <br />
-            Maximize productivity with parallel workflows.
+            समानांतर वर्कफ्लो के साथ उत्पादकता अधिकतम करें।
           </div>
         </div>
       </div>

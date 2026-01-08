@@ -9,28 +9,28 @@ const DOWNLOAD_URLS = {
   x64: "https://pub-dc249db286af4c1991fedf690157891d.r2.dev/cli-manager-1.2.1-x64.dmg",
 }
 
-// 네비게이션 메뉴 데이터
+// नेविगेशन मेनू डेटा (हिंदी)
 const NAV_MENUS = {
   resources: {
-    label: "Resources",
+    label: "संसाधन",
     items: [
-      { href: "/docs", label: "Docs" },
-      { href: "/gallery", label: "Gallery" },
-      { href: "/changelog", label: "Changelog" },
+      { href: "/docs", label: "दस्तावेज़" },
+      { href: "/gallery", label: "गैलरी" },
+      { href: "/changelog", label: "बदलाव लॉग" },
     ],
   },
   community: {
-    label: "Community",
+    label: "समुदाय",
     items: [
-      { href: "/roadmap", label: "Roadmap" },
-      { href: "/feedback", label: "Feedback" },
+      { href: "/roadmap", label: "रोडमैप" },
+      { href: "/feedback", label: "फीडबैक" },
     ],
   },
   compare: {
-    label: "Compare",
+    label: "तुलना",
     items: [
-      { href: "/compare/antigravity-cursor", label: "vs Antigravity, Cursor, etc" },
-      { href: "/compare/cli-agents", label: "vs Claude Code, etc" },
+      { href: "/compare/antigravity-cursor", label: "vs Antigravity, Cursor, आदि" },
+      { href: "/compare/cli-agents", label: "vs Claude Code, आदि" },
     ],
   },
 }
@@ -57,7 +57,7 @@ export function SiteHeader() {
           <button
             onClick={() => setIsSidebarOpen(true)}
             className="sm:hidden flex flex-col justify-center items-center w-8 h-8 rounded-full hover:bg-[rgba(55,50,47,0.05)] transition-all duration-200"
-            aria-label="메뉴 열기"
+            aria-label="मेनू खोलें"
           >
             <span className="block w-4 h-0.5 bg-[#2F3037]"></span>
             <span className="block w-4 h-0.5 bg-[#2F3037] my-1"></span>
@@ -131,7 +131,7 @@ export function SiteHeader() {
               className="flex justify-center items-center gap-1.5 cursor-pointer px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-green-500 text-white hover:opacity-90 transition-all duration-200 shadow-md"
             >
               <span className="text-xs md:text-[13px] font-medium leading-[14px] font-sans">
-                Download
+                डाउनलोड करें
               </span>
               <svg
                 width="12"
@@ -216,7 +216,7 @@ export function SiteHeader() {
           <button
             onClick={() => setIsSidebarOpen(false)}
             className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[rgba(55,50,47,0.05)] transition-colors"
-            aria-label="메뉴 닫기"
+            aria-label="मेनू बंद करें"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F3037" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 6 6 18" />
@@ -270,9 +270,9 @@ export function SiteHeader() {
           ))}
         </div>
 
-        {/* 사이드바 하단 - Download */}
+        {/* साइडबार नीचे - डाउनलोड */}
         <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[rgba(55,50,47,0.12)] bg-[#F7F5F3]">
-          <p className="px-4 text-xs font-semibold text-[rgba(49,45,43,0.50)] uppercase tracking-wider mb-2">Download</p>
+          <p className="px-4 text-xs font-semibold text-[rgba(49,45,43,0.50)] uppercase tracking-wider mb-2">डाउनलोड करें</p>
           <a
             href={DOWNLOAD_URLS.arm64}
             download

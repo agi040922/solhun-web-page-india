@@ -20,26 +20,28 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://solhun.com"),
+  metadataBase: new URL("https://solhun.in"),
   title: {
-    default: "CLI Manager - Manage Claude Code, Codex CLI & Gemini CLI in One Place",
-    template: "%s | CLI Manager"
+    default: "CLI Manager - Claude Code, Codex CLI और Gemini CLI को एक जगह प्रबंधित करें",
+    template: "%s | CLI Manager India"
   },
-  description: "Manage Claude Code, Codex CLI, and Gemini CLI from one dashboard. Organize projects, rename agents, and switch editors instantly with CLI Manager.",
+  description: "Claude Code, Codex CLI, और Gemini CLI को एक डैशबोर्ड से प्रबंधित करें। प्रोजेक्ट्स व्यवस्थित करें, एजेंट्स का नाम बदलें, और CLI Manager के साथ तुरंत एडिटर्स स्विच करें।",
   keywords: [
     "CLI Manager",
+    "CLI Manager India",
     "Claude Code",
     "Codex CLI",
     "Gemini CLI",
-    "AI coding assistant",
-    "CLI agent management",
-    "developer tools",
-    "terminal manager",
+    "AI कोडिंग असिस्टेंट",
+    "CLI एजेंट प्रबंधन",
+    "डेवलपर टूल्स",
+    "टर्मिनल मैनेजर",
     "VS Code",
     "Cursor IDE",
-    "AI development workflow",
-    "command line interface",
-    "multi-agent management"
+    "AI डेवलपमेंट वर्कफ्लो",
+    "कमांड लाइन इंटरफेस",
+    "मल्टी-एजेंट प्रबंधन",
+    "भारत डेवलपर्स"
   ],
   authors: [{ name: "CLI Manager Team" }],
   creator: "CLI Manager",
@@ -57,23 +59,23 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    siteName: "CLI Manager",
-    title: "CLI Manager - All Your CLI Agents in One Place",
-    description: "Manage Claude Code, Codex CLI, and Gemini CLI from a single dashboard. Rename agents, organize projects, and switch editors instantly.",
+    locale: "hi_IN",
+    siteName: "CLI Manager India",
+    title: "CLI Manager - आपके सभी CLI एजेंट्स एक जगह",
+    description: "Claude Code, Codex CLI, और Gemini CLI को एक डैशबोर्ड से प्रबंधित करें। एजेंट्स का नाम बदलें, प्रोजेक्ट्स व्यवस्थित करें, और तुरंत एडिटर्स स्विच करें।",
     images: [
       {
         url: "/cli-main.png",
         width: 1200,
         height: 630,
-        alt: "CLI Manager Dashboard - Manage all CLI agents in one place",
+        alt: "CLI Manager डैशबोर्ड - सभी CLI एजेंट्स को एक जगह प्रबंधित करें",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CLI Manager - All Your CLI Agents in One Place",
-    description: "Manage Claude Code, Codex CLI, and Gemini CLI from a single dashboard. The ultimate tool for AI-powered development.",
+    title: "CLI Manager - आपके सभी CLI एजेंट्स एक जगह",
+    description: "Claude Code, Codex CLI, और Gemini CLI को एक डैशबोर्ड से प्रबंधित करें। AI-संचालित डेवलपमेंट के लिए सर्वोत्तम टूल।",
     images: ["/cli-main.png"],
     creator: "@climanager",
   },
@@ -89,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable} antialiased`}>
+    <html lang="hi" className={`${inter.variable} ${instrumentSerif.variable} antialiased`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

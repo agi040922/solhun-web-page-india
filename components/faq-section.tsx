@@ -9,29 +9,29 @@ export interface FAQItem {
 
 export const faqData: FAQItem[] = [
   {
-    question: "What is Solhun?",
+    question: "Solhun क्या है?",
     answer:
-      "Solhun is a manager app that lets you manage multiple CLI agents (Claude Code, Gemini CLI, Codex, etc.) and projects all in one place.",
+      "Solhun एक मैनेजर ऐप है जो आपको कई CLI एजेंट्स (Claude Code, Gemini CLI, Codex, आदि) और प्रोजेक्ट्स को एक ही जगह प्रबंधित करने देता है।",
   },
   {
-    question: "Which CLI tools are supported?",
+    question: "कौन से CLI टूल्स समर्थित हैं?",
     answer:
-      "You can add any CLI tool like Claude Code, Gemini CLI, Codex, and even apps. Switch freely between them with no vendor lock-in.",
+      "आप Claude Code, Gemini CLI, Codex, और यहां तक कि ऐप्स जैसे किसी भी CLI टूल को जोड़ सकते हैं। बिना किसी वेंडर लॉक-इन के उनके बीच स्वतंत्र रूप से स्विच करें।",
   },
   {
-    question: "Is it free to use?",
+    question: "क्या यह मुफ्त में उपयोग करने के लिए है?",
     answer:
-      "Yes, core features are available for free.",
+      "हां, मुख्य सुविधाएं मुफ्त में उपलब्ध हैं।",
   },
   {
-    question: "Do you support Windows/Linux?",
+    question: "क्या आप Windows/Linux को सपोर्ट करते हैं?",
     answer:
-      "Currently, only Mac is supported. Windows is coming soon. Linux is not yet on the roadmap.",
+      "वर्तमान में, केवल Mac समर्थित है। Windows जल्द आ रहा है। Linux अभी रोडमैप पर नहीं है।",
   },
   {
-    question: "Is my data safe?",
+    question: "क्या मेरा डेटा सुरक्षित है?",
     answer:
-      "Solhun doesn't send any data externally. Everything is processed locally, and it's Apple notarized for your security.",
+      "Solhun बाहरी रूप से कोई डेटा नहीं भेजता है। सब कुछ स्थानीय रूप से संसाधित होता है, और यह आपकी सुरक्षा के लिए Apple नोटराइज्ड है।",
   },
 ]
 
@@ -63,12 +63,12 @@ export default function FAQSection() {
         {/* Left Column - Header */}
         <div className="w-full lg:flex-1 flex flex-col justify-center items-start gap-4 lg:py-5">
           <div className="w-full flex flex-col justify-center text-[#49423D] font-semibold leading-tight md:leading-[44px] font-sans text-4xl tracking-tight">
-            Frequently Asked Questions
+            अक्सर पूछे जाने वाले प्रश्न
           </div>
           <div className="w-full text-[#605A57] text-base font-normal leading-7 font-sans">
-            Everything you need to know about
+            Solhun के साथ अपने CLI एजेंट्स को
             <br className="hidden md:block" />
-            managing your CLI agents with Solhun.
+            प्रबंधित करने के बारे में जानने योग्य सब कुछ।
           </div>
         </div>
 

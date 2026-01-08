@@ -17,9 +17,9 @@ function StatusBadge({ status }: { status: Status }) {
   };
 
   const labels = {
-    "in-progress": "In Progress",
-    planned: "Planned",
-    completed: "Completed",
+    "in-progress": "प्रगति में",
+    planned: "योजनाबद्ध",
+    completed: "पूर्ण",
   };
 
   return (
@@ -43,7 +43,7 @@ export function RoadmapClient({ roadmaps }: RoadmapClientProps) {
         <div className="flex items-center gap-2 mb-6">
           <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
           <h2 className="text-xl font-semibold text-[#37322F] font-serif">
-            In Progress
+            प्रगति में
           </h2>
         </div>
         <div className="space-y-4">
@@ -81,7 +81,7 @@ export function RoadmapClient({ roadmaps }: RoadmapClientProps) {
           <div className="flex items-center gap-2 mb-6">
             <div className="w-2 h-2 rounded-full bg-gray-300" />
             <h2 className="text-xl font-semibold text-[#37322F] font-serif">
-              Planned
+              योजनाबद्ध
             </h2>
           </div>
           <div className="space-y-4">
@@ -120,7 +120,7 @@ export function RoadmapClient({ roadmaps }: RoadmapClientProps) {
           <div className="flex items-center gap-2 mb-6">
             <div className="w-2 h-2 rounded-full bg-green-500" />
             <h2 className="text-xl font-semibold text-[#37322F] font-serif">
-              Completed
+              पूर्ण
             </h2>
           </div>
           <div className="space-y-4">
@@ -156,7 +156,7 @@ export function RoadmapClient({ roadmaps }: RoadmapClientProps) {
       {/* Empty State */}
       {roadmaps.length === 0 && (
         <div className="py-12 text-center text-gray-500">
-          No roadmap items available yet.
+          अभी तक कोई रोडमैप आइटम उपलब्ध नहीं है।
         </div>
       )}
     </div>

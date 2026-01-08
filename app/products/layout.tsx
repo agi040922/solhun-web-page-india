@@ -1,44 +1,44 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Features - Powerful Tools for AI-Powered Development",
+  title: "सुविधाएं - AI-संचालित डेवलपमेंट के लिए शक्तिशाली टूल्स",
   description:
-    "Discover powerful CLI Manager features: Worktree management for parallel AI agents, Git integration, port management, terminal templates, and experimental playground. Supercharge your development workflow.",
+    "CLI Manager की शक्तिशाली सुविधाओं की खोज करें: समानांतर AI एजेंट्स के लिए Worktree मैनेजमेंट, Git इंटीग्रेशन, पोर्ट मैनेजमेंट, टर्मिनल टेम्प्लेट्स, और प्रयोगात्मक प्लेग्राउंड। अपने डेवलपमेंट वर्कफ्लो को सुपरचार्ज करें।",
   keywords: [
-    "CLI Manager features",
-    "AI agent tools",
-    "Git worktree management",
-    "parallel AI development",
-    "port management tool",
-    "terminal templates",
-    "developer productivity",
-    "AI-powered development",
-    "workflow automation",
-    "Git integration",
+    "CLI Manager सुविधाएं",
+    "AI एजेंट टूल्स",
+    "Git worktree मैनेजमेंट",
+    "समानांतर AI डेवलपमेंट",
+    "पोर्ट मैनेजमेंट टूल",
+    "टर्मिनल टेम्प्लेट्स",
+    "डेवलपर प्रोडक्टिविटी",
+    "AI-संचालित डेवलपमेंट",
+    "वर्कफ्लो ऑटोमेशन",
+    "Git इंटीग्रेशन",
     "Claude Code worktree",
-    "multi-agent workflow",
+    "मल्टी-एजेंट वर्कफ्लो",
   ],
   openGraph: {
-    title: "Features - Powerful Tools for AI-Powered Development",
+    title: "सुविधाएं - AI-संचालित डेवलपमेंट के लिए शक्तिशाली टूल्स",
     description:
-      "Supercharge your workflow with intelligent features designed to make CLI agent management effortless. Worktree, Git, Port, Terminal Templates & Playground.",
+      "CLI एजेंट मैनेजमेंट को आसान बनाने वाली बुद्धिमान सुविधाओं से अपने वर्कफ्लो को सुपरचार्ज करें। Worktree, Git, पोर्ट, टर्मिनल टेम्प्लेट्स और प्लेग्राउंड।",
     type: "website",
-    locale: "en_US",
-    siteName: "CLI Manager",
+    locale: "hi_IN",
+    siteName: "CLI Manager India",
     images: [
       {
         url: "/cli-main-gemini.png",
         width: 1200,
         height: 630,
-        alt: "CLI Manager Features - AI-Powered Development Tools",
+        alt: "CLI Manager सुविधाएं - AI-संचालित डेवलपमेंट टूल्स",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Features - Powerful Tools for AI-Powered Development",
+    title: "सुविधाएं - AI-संचालित डेवलपमेंट के लिए शक्तिशाली टूल्स",
     description:
-      "Supercharge your workflow with intelligent features: Worktree management, Git integration, port management, terminal templates, and playground.",
+      "बुद्धिमान सुविधाओं से अपने वर्कफ्लो को सुपरचार्ज करें: Worktree मैनेजमेंट, Git इंटीग्रेशन, पोर्ट मैनेजमेंट, टर्मिनल टेम्प्लेट्स, और प्लेग्राउंड।",
     images: ["/cli-main-gemini.png"],
     creator: "@climanager",
   },
@@ -66,18 +66,18 @@ const jsonLd = {
   applicationCategory: "DeveloperApplication",
   operatingSystem: "macOS",
   description:
-    "CLI Manager helps developers orchestrate AI agents with powerful tools for worktree management, Git integration, port tracking, and terminal automation. Built for macOS.",
+    "CLI Manager डेवलपर्स को worktree मैनेजमेंट, Git इंटीग्रेशन, पोर्ट ट्रैकिंग, और टर्मिनल ऑटोमेशन के लिए शक्तिशाली टूल्स के साथ AI एजेंट्स को व्यवस्थित करने में मदद करता है। macOS के लिए बनाया गया।",
   featureList: [
-    "Worktree Manager - Parallel AI agent workflows with Git worktrees",
-    "Git Integration - Visual Git history and easy rollback",
-    "Port Manager - Track and manage ports across projects",
-    "Terminal Templates - Save and reuse commands and configurations",
-    "Playground - Sandboxed environment for AI experimentation",
+    "Worktree मैनेजर - Git worktrees के साथ समानांतर AI एजेंट वर्कफ्लो",
+    "Git इंटीग्रेशन - विज़ुअल Git हिस्ट्री और आसान रोलबैक",
+    "पोर्ट मैनेजर - प्रोजेक्ट्स में पोर्ट्स को ट्रैक और मैनेज करें",
+    "टर्मिनल टेम्प्लेट्स - कमांड्स और कॉन्फ़िगरेशन सेव और रीयूज़ करें",
+    "प्लेग्राउंड - AI प्रयोग के लिए सैंडबॉक्स्ड वातावरण",
   ],
   offers: {
     "@type": "Offer",
     price: "0",
-    priceCurrency: "USD",
+    priceCurrency: "INR",
   },
 }
 
